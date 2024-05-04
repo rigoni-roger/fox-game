@@ -1,10 +1,10 @@
-import {ICONS} from './constants';
+import { ICONS } from "./constants";
 
 const toggleHighlighted = (icon, show) =>
   document
     .querySelector(`.${ICONS[icon]}-icon`)
-    .classList[show ? "add" : "remove"]("highlighted");
-  
+    .classList.toggle("highlighted", show);
+
 export default function initButtons(handleUserAction) {
   let selectedIcon = 0;
   function buttonClick({ target }) {
